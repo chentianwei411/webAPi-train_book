@@ -1,0 +1,5 @@
+development:
+  api_key: "214b163d003a4799cb76359b6d30b7de"
+production:
+  api_key: "产品环境的的key"
+  
