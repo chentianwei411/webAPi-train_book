@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :reservations
+  has_one_attached :image
 
   before_create :generate_authentication_token
 
