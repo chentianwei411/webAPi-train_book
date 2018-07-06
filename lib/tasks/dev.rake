@@ -3,7 +3,7 @@ namespace :dev do
   task :fetch_city => :environment do
     puts "Fetch city data..."
     # 从聚合数据网上，得到api钥匙，然后下载json格式的数据。
-    response = RestClient.get "http://v.juhe.cn/weather/citys?key=JUHE_CONFIG["api_key"]"
+    response = RestClient.get "http://v.juhe.cn/weather/citys?key=JUHE_CONFIG['api_key']"
     # 转化为hash格式
     data = JSON.parse(response.body)
     # 把数据存入创建的City数据库中。
