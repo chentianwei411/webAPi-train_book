@@ -1,13 +1,3 @@
-json.data do
-  # json.array! @trains do |train|
-  #   json.number train.number
-  #   json.train_url api_v1_train_url(train.number)
-  # end
-
-  json.partial! 'item', collection: @trains, :as => :train
-  #另外一种写法： json.array! @trains, :as => :train, partial: 'item'
-end
-
 # 加入分页功能
 json.meta1 do
   json.current_page @trains.current_page
@@ -26,4 +16,14 @@ json.meta1 do
   else
     json.previous_url api_v1_trains_url( :page => @trains.prev_page )
   end
+end
+
+json.data do
+  # json.array! @trains do |train|
+  #   json.number train.number
+  #   json.train_url api_v1_train_url(train.number)
+  # end
+
+  json.partial! 'item', collection: @trains, :as => :train
+  #另外一种写法： json.array! @trains, :as => :train, partial: 'item'
 end

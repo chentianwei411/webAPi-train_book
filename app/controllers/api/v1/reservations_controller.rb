@@ -36,7 +36,7 @@ class Api::V1::ReservationsController < ApiController
                                     :customer_name => params[:customer_name],
                                     :customer_phone => params[:customer_phone] )
 
-    @reservation.user = curernt_user
+    @reservation.user = current_user
 
     if @reservation.save
       render :json => { :booking_code => @reservation.booking_code,
